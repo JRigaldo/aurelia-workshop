@@ -6,6 +6,7 @@ import routes from './routes';
 export class Shell {
   constructor(user) {
     this.user = user;
+    console.log(this.user);
   }
 
   configureRouter(config, router) {

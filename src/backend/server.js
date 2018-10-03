@@ -20,14 +20,14 @@ export class User {
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
-  
+
   get ticketCount() {
     return ticketData.filter(t => t.fromId === this.id).length;
   }
-  
+
   get postCount() {
     return ticketData.reduce( (a,b) => a.concat(b.posts), [] ).filter( p => p.fromId === this.id ).length;
-  } 
+  }
 
   clone() {
     return new User(clone(this));
@@ -117,13 +117,13 @@ let userData = [
   })
 ];
 
-function randomDateInLastThirtyDays() { 
-  return new Date(new Date().getTime() - (Math.random()*30*24*60*60*1000)); 
+function randomDateInLastThirtyDays() {
+  return new Date(new Date().getTime() - (Math.random()*30*24*60*60*1000));
 }
 
 // adds a random number of days to a date, returns the new date or the current date, whichever is earlier (thus no future dates)
 function addRandomNumberOfDaysToDate(start, maxDays) {
-  return new Date(Math.min(new Date(start.getTime() + (Math.random()*Math.floor(Math.random() * maxDays)*24*60*60*1000)), new Date())); 
+  return new Date(Math.min(new Date(start.getTime() + (Math.random()*Math.floor(Math.random() * maxDays)*24*60*60*1000)), new Date()));
 }
 
 var ticketData = [
@@ -176,7 +176,7 @@ for (let i = 0; i < 100; i++) {
   activityData[i].createdAt = randomDateInLastThirtyDays();
   activityData[i].associatedId = i + 1;
   activityData[i].createdBy = clone(userData[Math.floor(Math.random() * 8)]);
-  
+
   let ticket = ticketData.find(t => t.id === activityData[i].associatedId);
   activityData[i].title = `${activityData[i].createdBy.firstName} ${activityData[i].createdBy.lastName} <strong>posted</strong> a message to the ticket "${ticket.title}"`
 }
@@ -204,7 +204,7 @@ export class Server {
     isActive: false
     });
   }
-  
+
   saveUser(user) {
     return wait().then(() => {
       let clone = user.clone();
@@ -221,14 +221,14 @@ export class Server {
       return clone.clone();
     });
   }
-  
+
   getUser(userId) {
     return wait().then(() => {
       let existing = userData.find(c => c.id === userId);
       return existing ? existing.clone() : null;
     });
   }
-  
+
   getUserSummaries() {
     return wait().then(() => userData.map(x => x.clone()));
   }

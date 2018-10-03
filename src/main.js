@@ -3,6 +3,9 @@ import {PLATFORM} from 'aurelia-pal';
 import 'babel-polyfill';
 import * as Bluebird from 'bluebird';
 
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/dropdown';
+
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 

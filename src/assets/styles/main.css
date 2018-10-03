@@ -42,8 +42,18 @@ ai-dialog>ai-dialog-header {
   margin: 0 auto;
 }
 
+.navbar.navbar-default {
+  height: 40px;
+}
+
 .navbar.navbar-default .nav>li>a {
   padding: 5px;
+}
+
+.navbar-default .navbar-nav.tabs>li {
+  height: 30px;
+  top: -2px;
+  padding: 0 5px !important;
 }
 
 .navbar.navbar-default .nav>li.open>a {
@@ -633,4 +643,8 @@ data-grid tr.sizing-row td {
 
 .fa {
   margin: 10px 0;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
 }

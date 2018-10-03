@@ -1,15 +1,15 @@
 import {inject} from 'aurelia-framework';
 import {Server} from 'backend/server';
 
-@inject (Server)
+@inject(Server)
 export class Home {
-  constructor(server){
+  constructor(server) {
     this.server = server;
     this.activity = null;
     this.news = null;
   }
-
-  activate(){
+  
+  activate() {
     return Promise.all([
       this.server.getRecentActivity().then(activity => this.activity = activity),
       this.server.getNews().then(news => this.news = news)
