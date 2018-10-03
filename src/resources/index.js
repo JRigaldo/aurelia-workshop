@@ -1,3 +1,5 @@
 export function configure(config) {
-  //config.globalResources([]);
+  config.globalResources([
+    PLATFORM.moduleName('./value-converters/activity-type-to-route')
+  ]);
 }

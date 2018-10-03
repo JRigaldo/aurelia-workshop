@@ -41,7 +41,7 @@ let userData = [
     email: 'rob@eisenberg.com',
     firstName: 'Rob',
     lastName: 'Eisenberg',
-    iconUrl: '/img/users/icon/1.jpg',
+    iconUrl: '/rehku',
     avatarUrl: '/img/users/avatar/1.jpg',
     isActive: true
   }),
