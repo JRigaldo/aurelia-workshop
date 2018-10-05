@@ -11,14 +11,13 @@ export class Login {
     this.password = '';
     this.message = '';
   }
-
+  
   login() {
     this.server.login(this.username, this.password).then(result => {
       if (result) {
         this.message = '';
-        let shell = PLATFORM.moduleName('shell/shell');
         this.aurelia.use.instance(User, result);
-        this.aurelia.setRoot(shell);
+        this.aurelia.setRoot('shell/shell');
       } else {
         this.message = 'Incorrect Username or Password!';
       }

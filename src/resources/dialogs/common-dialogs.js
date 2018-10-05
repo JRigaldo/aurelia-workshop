@@ -8,12 +8,12 @@ export class CommonDialogs {
   constructor(dialogService) {
     this.dialogService = dialogService;
   }
-
+  
   showMessage(message, title = 'Message', options = ['Ok']) {
     return this.dialogService.open({ viewModel: MessageBox, model: { message, title, options } });
   }
 
   prompt(message, title = 'Prompt') {
-    return this.dialogService.open({ viewModel: Prompt, model:{ message, title } })
+    return this.dialogService.open({ viewModel: Prompt, model: { message, title } })
   }
 }
